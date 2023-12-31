@@ -2,7 +2,7 @@ const User = require("../models/User");
 const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, '../config.env') });
 const stripe = require("stripe")(process.env.STRIPE_SECRET);
-const DOMAIN = "http://localhost:3000";
+const DOMAIN = "http://localhost:8080";
 const timer = (ms) => new Promise((res) => setTimeout(res, ms));
 
 exports.createCheckout = async (req, res) => {
@@ -55,7 +55,7 @@ exports.createWebhook = async (req, res) => {
   console.log("create webhook using req.body", req.rawBody);
   const sig = req.headers["stripe-signature"];
   let event;
-  const endpointSecret = process.env.APPSETTING_STRIPE_WEBHOOK_SECRET;
+  const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
   try {
     event = stripe.webhooks.constructEvent(req.rawBody, sig, endpointSecret);
   } catch (err) {

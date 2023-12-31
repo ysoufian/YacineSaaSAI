@@ -52,12 +52,12 @@ UserSchema.methods.getSignedJwtToken = function (res) {
 
   const accessToken = jwt.sign(
     { id: this._id },
-    process.env.APPSETTING_JWT_ACCESS_SECRET,
+    process.env.JWT_ACCESS_SECRET,
     { expiresIn: 3600 }
   );
   const refreshToken = jwt.sign(
     { id: this._id },
-    process.env.APPSETTING_JWT_REFRESH_SECRET,
+    process.env.JWT_REFRESH_SECRET,
     { expiresIn: 3600}
   );
   res.cookie("refreshToken", `${refreshToken}`, {

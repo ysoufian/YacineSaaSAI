@@ -37,7 +37,7 @@ app.use(errorHandler)
 
 
 
-const port = process.env.PORT |4242 ;
+const port = process.env.WEBSITE_PORT |8080 ;
 const mongoDbUri = process.env.MONGO_DB_URI;
 mongoose.connect(mongoDbUri).then(console.log('Connected to DB')).catch(error => console.log(error));
 
@@ -45,3 +45,13 @@ mongoose.connect(mongoDbUri).then(console.log('Connected to DB')).catch(error =>
 app.listen( port , ()=>{
     console.log(`server running on port ${port}`);
 });
+
+const node_env = process.env.NODE_ENV;
+if (node_env =='production')
+{
+    app.use(express.static(path.join(__dirname,'client/build')));
+    app.get('*',(req,res)=>{
+        res.sendFile(path.join(__dirname,'client/build/index.html'));
+    }   );  
+
+}

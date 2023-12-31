@@ -14,7 +14,7 @@ exports.protect = async (req, res, next) => {
     }
 
     try {
-        const decoded = jwt.verify(token, process.env.APPSETTING_JWT_ACCESS_SECRET);
+        const decoded = jwt.verify(token, process.env.JWT_ACCESS_SECRET);
         if (!decoded.id) {
             return next(new ErrorResponse('Token verification failed. Authorization denied.', 401));
         }
