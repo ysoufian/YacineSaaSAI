@@ -10,7 +10,7 @@ const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 
 
-//app.use(cors);
+app.use(cors);
 //app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended:true}));
