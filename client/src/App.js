@@ -1,3 +1,6 @@
+import React from 'react';
+import { withAITracking } from '@microsoft/applicationinsights-react-js';
+import { reactPlugin, appInsights } from './AppInsights';
 
 import { Routes, Route } from "react-router-dom";
 import HomeScreen from "./components/screens/HomeScreen";
@@ -38,5 +41,5 @@ function App() {
     </Elements>
   );
 }
-
-export default App;
+export default withAITracking(reactPlugin, App);
+//export default App;
