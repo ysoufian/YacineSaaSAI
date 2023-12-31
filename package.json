@@ -2,9 +2,9 @@
   "name": "saasai",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm install && cd client && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
