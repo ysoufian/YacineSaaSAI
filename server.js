@@ -1,6 +1,9 @@
 
 const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, 'config.env') });
+const applicationInsights = require('applicationinsights');
+applicationInsights.setup(process.env.APPLICATIONINSIGHTS_CONNECTION_STRING).start();
+
 const errorHandler = require('./middleware/error');
 const cors = require('cors');
 const express = require('express');
