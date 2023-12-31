@@ -1,0 +1,17 @@
+post http://localhost:4242/api/auth/register
+Content-Type: application/json
+
+{
+  "username":"yacine",
+  "email": "yacine.soufiane23@gmail.com",
+  "password": "helloYacine101"
+}
+###
+
+post http://localhost:4242/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "yacine.soufiane23@gmail.com",
+    "password": "helloYacine101"
+}
