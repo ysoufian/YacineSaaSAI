@@ -3,13 +3,14 @@ import { Box, Typography, Card, Stack } from "@mui/material";
 import DescriptionIcon from "@mui/icons-material/Description";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import { useState } from "react";
 const HomeScreen = () => {
   const navigate = useNavigate();
   // price_1OSWPlAo6JtR4rXKZm1xEdue
+  const [error,setError] = useState(null);
 
   const handleCheckout = async (e) => {
-    console.log("handleCheckout called from HomeScreen");
+    console.log("handleCheckout called from HomeScreen",error);
     e.preventDefault();
     try {
       const token = await axios.get("/api/auth/refresh-token");
