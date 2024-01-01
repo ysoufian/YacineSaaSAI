@@ -10,6 +10,6 @@ var appInsights = new ApplicationInsights({
     }
 });
 appInsights.loadAppInsights();
-appInsights.loadAppInsights();
+
 
 export { reactPlugin, appInsights }

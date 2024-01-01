@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build": "npm install && cd client && npm install && npm run build"
+    "build": "CI=false npm install && cd client && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
