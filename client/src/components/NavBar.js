@@ -4,7 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 import { useState } from "react";
-import { Elements } from '@stripe/react-stripe-js';
+
 
 const NavBar = () => {
   const theme = useTheme();

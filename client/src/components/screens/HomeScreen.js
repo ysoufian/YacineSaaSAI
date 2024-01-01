@@ -1,12 +1,10 @@
 import React from "react";
-import { Box, Typography, Card, Stack, Alert, Collapse } from "@mui/material";
+import { Box, Typography, Card, Stack } from "@mui/material";
 import DescriptionIcon from "@mui/icons-material/Description";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-//import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+
 const HomeScreen = () => {
-  const [error, setError] = useState("");
   const navigate = useNavigate();
   // price_1OSWPlAo6JtR4rXKZm1xEdue
 
